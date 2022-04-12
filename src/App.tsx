@@ -1,24 +1,20 @@
-import React from 'react'
-import './App.css'
+import { Routes, Route} from "react-router-dom"
+import './css/App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+import Home from './pages/Home'
+import Club from './pages/Club'
+
+import Nav from './components/Nav'
+
+export default function App() {
+    return (
+        <div>
+            <Nav />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="club" element={<Club />} />
+            </Routes>
+            
+        </div>
+    )
 }
-
-export default App
